@@ -10,11 +10,17 @@ public class test20 {
         Stack<Character> st = new Stack<>();
         
         System.out.println("strtIdx : "+strtIdx);
+        System.out.println("strLen : "+strLen);
         System.out.println("strtIdx + strLen : "+(strtIdx + strLen));
         
         for(int i = strtIdx; i < strtIdx + strLen; i++){
             int idx = i % strLen;
             char c = s.charAt(idx);
+            System.out.println("----");
+            System.out.println(i);
+            System.out.println(idx);
+            System.out.println(c);
+            System.out.println("----");
 
             if(c == '(' || c == '{' || c == '[')
                 st.push(c);
@@ -72,7 +78,7 @@ public class test20 {
 		
         for(int i = 0; i < strLen; i++) {
             answer += cal(s, i, strLen);
-            
+            System.out.println(answer);
         }
 		
 		System.out.println(answer);
