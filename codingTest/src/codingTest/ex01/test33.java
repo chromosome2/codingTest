@@ -20,7 +20,7 @@ public class test33 {
 				}
 				System.out.println(" = "+hap);
 				set.add(hap);
-				if(i==4) {
+				if(i==elements.length-1) {
 					break;
 				}
 			}
