@@ -6,21 +6,31 @@ import java.util.Queue;
 public class test37 {
 
 	public static void main(String[] args) {
-		int bridge_length=2;
-		int weight=10;
-		int[] truck_weights= {7,4,5,6,4};
+		int bridge_length=100;
+		int weight=100;
+		int[] truck_weights= {10,10,10,10,10,10,10,10,10,10};
 		int answer=0;
 		
 		Queue<Integer> q=new LinkedList<>();
 		
 		int sum=0;
-		for(int i=0; i<truck_weights.length; i++) {
-			for(int j=0; j<bridge_length; j++) {
-				if(sum+truck_weights[i]<=weight) {
-					
-				}
+		
+		int index=0;
+		while(index!=truck_weights.length) {
+			if(q.size()==bridge_length) {
+				sum-=q.remove();
+			}
+			if(sum+truck_weights[index]>weight) {
+				q.offer(0);
+				answer++;
+			}else {
+				sum+=truck_weights[index];
+				q.offer(truck_weights[index]);
+				answer++;
+				index++;
 			}
 		}
+		answer+=bridge_length;
 		
 		System.out.println(answer);
 
